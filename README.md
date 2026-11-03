@@ -1,113 +1,198 @@
-# REST API Testing Using Postman
+# 🚀 Reqres API Testing Project | Postman
 
-## Project Overview
+![Postman](https://img.shields.io/badge/Tool-Postman-orange?logo=postman\&logoColor=white)
+![API Testing](https://img.shields.io/badge/Testing-API%20Testing-blue)
+![HTTP](https://img.shields.io/badge/Protocol-HTTP-green)
+![Status](https://img.shields.io/badge/Project-Completed-success)
 
-This project demonstrates manual and automated REST API testing using **Postman** and the public **Reqres API**.
+## 📌 Project Overview
 
-The objective was to test different HTTP methods, validate API responses, verify status codes, and write automated test scripts using Postman's JavaScript-based testing features.
+This project demonstrates **REST API testing using Postman** with the Reqres API.
 
-The project covers CRUD-related API operations: GET, POST, PUT, PATCH, and DELETE.
+The project covers the execution and validation of different HTTP methods, response status codes, response times, JSON response data, and automated test scripts.
 
-## Tools & Technologies
+The objective is to understand API testing fundamentals and demonstrate practical testing skills.
 
-* **Postman** – API testing and automation
-* **Reqres API** – Public REST API for testing
-* **JavaScript** – Writing automated test scripts
-* **JSON** – Request and response data
-* **HTTP Methods** – GET, POST, PUT, PATCH, DELETE
+## 🎯 Project Objectives
 
-## API Base URL
+* Understand REST API concepts.
+* Test APIs using different HTTP methods.
+* Validate HTTP response status codes.
+* Verify JSON response data.
+* Validate API response time.
+* Write automated test scripts using Postman.
+* Understand CRUD operations.
+* Document API testing results with screenshots.
 
-`https://reqres.in/api`
+## 🛠️ Tools & Technologies
 
-## API Requests Tested
+| Tool       | Purpose                             |
+| ---------- | ----------------------------------- |
+| Postman    | API testing and automation          |
+| Reqres API | Sample REST API                     |
+| JavaScript | Writing API test scripts            |
+| JSON       | Request and response data           |
+| GitHub     | Project documentation and portfolio |
 
-| Test Case             | HTTP Method | Endpoint        | Expected Status |
-| --------------------- | ----------- | --------------- | --------------- |
-| Get Single User       | GET         | `/users/2`      | 200 OK          |
-| Get All Users         | GET         | `/users?page=2` | 200 OK          |
-| Create User           | POST        | `/users`        | 201 Created     |
-| Update User           | PUT         | `/users/2`      | 200 OK          |
-| Partially Update User | PATCH       | `/users/2`      | 200 OK          |
-| Delete User           | DELETE      | `/users/2`      | 204 No Content  |
+## 🌐 API Information
 
-## Test Execution Summary
+**Base URL:** `https://reqres.in/api`
 
-The following automated checks were executed in Postman.
+**API Endpoints Tested:**
 
-| API Request          | Total Checks | Passed | Failed |
-| -------------------- | -----------: | -----: | -----: |
-| GET – Single User    |            5 |      5 |      0 |
-| POST – Create User   |            6 |      6 |      0 |
-| PUT – Update User    |            4 |      4 |      0 |
-| PATCH – Update User  |            4 |      4 |      0 |
-| DELETE – Delete User |            2 |      2 |      0 |
-| **Total**            |       **21** | **21** |  **0** |
+| HTTP Method | Endpoint        | Description                  |
+| ----------- | --------------- | ---------------------------- |
+| GET         | `/users?page=2` | Retrieve all users on page 2 |
+| GET         | `/users/2`      | Retrieve a single user       |
+| POST        | `/users`        | Create a new user            |
+| PUT         | `/users/2`      | Update an existing user      |
+| PATCH       | `/users/2`      | Partially update a user      |
+| DELETE      | `/users/2`      | Delete a user                |
 
-**GET – All Users:** The request returned `200 OK`. The response showed page 2 of 2, six users on that page, and 12 users in total. Its automated test count is not included in the table above.
+## 🧪 API Testing Details
 
-## Automated Test Validations
+### 1️⃣ GET – Retrieve Single User
 
-Automated Postman scripts were used to validate:
+* Verified HTTP status code: `200 OK`
+* Validated response time.
+* Verified user ID.
+* Verified first name.
+* Verified email presence.
 
-* HTTP response status codes
-* API response time (below 3000 milliseconds)
-* User ID
-* User name and email
-* Created user details
-* Updated user information
-* Presence of created and updated timestamps
-* Successful delete response
+**Test Results: 5/5 Passed**
 
-## Key Results
+### 2️⃣ POST – Create User
 
-* Successfully retrieved user details using GET.
-* Retrieved paginated user data using GET.
-* Created a user using POST and received `201 Created`.
-* Updated user information using PUT.
-* Partially updated user information using PATCH.
-* Deleted a user using DELETE and received `204 No Content`.
-* Executed 21 automated checks, all of which passed.
+* Verified HTTP status code: `201 Created`
+* Validated response time.
+* Verified user name.
+* Verified job information.
+* Verified generated user ID.
+* Verified created date.
 
-## Project Structure
+**Test Results: 6/6 Passed**
+
+### 3️⃣ PUT – Update User
+
+* Verified HTTP status code: `200 OK`
+* Validated response time.
+* Verified updated user name.
+* Verified updated job information.
+
+**Test Results: 4/4 Passed**
+
+### 4️⃣ PATCH – Partially Update User
+
+* Verified HTTP status code: `200 OK`
+* Validated response time.
+* Verified updated job information.
+* Verified updated date.
+
+**Test Results: 4/4 Passed**
+
+### 5️⃣ DELETE – Delete User
+
+* Verified HTTP status code: `204 No Content`
+* Validated response time.
+
+**Test Results: 2/2 Passed**
+
+### 6️⃣ GET – Retrieve All Users
+
+* Executed GET request to retrieve users.
+* Verified successful response: `200 OK`.
+* Observed page 2 containing 6 users.
+* API response indicated 12 users in total.
+
+## 📊 Automated Test Execution Summary
+
+| API Request                    |     Test Results |
+| ------------------------------ | ---------------: |
+| GET – Single User              |       5/5 Passed |
+| POST – Create User             |       6/6 Passed |
+| PUT – Update User              |       4/4 Passed |
+| PATCH – Update User            |       4/4 Passed |
+| DELETE – Delete User           |       2/2 Passed |
+| **Total automated assertions** | **21/21 Passed** |
+
+*Note: The 21 assertions are from the five requests with visible Postman test results. The GET All Users request was also executed successfully, but its assertion count is not included.*
+
+## 📸 Screenshots & Test Evidence
+
+The following screenshots demonstrate the API requests, responses, and automated test results.
+
+### 1. GET – Retrieve All Users
+
+![GET All Users](Screenshots/GET-All-Users.png)
+
+### 2. GET – Retrieve Single User
+
+![GET Single User](Screenshots/GET-Single-User.png)
+
+### 3. POST – Create User
+
+![POST Create User](Screenshots/POST-Create-User.png)
+
+### 4. PUT – Update User
+
+![PUT Update User](Screenshots/PUT-Update-User.png)
+
+### 5. PATCH – Partially Update User
+
+![PATCH Update User](Screenshots/PATCH-Update-User.png)
+
+### 6. DELETE – Delete User
+
+![DELETE User](Screenshots/DELETE-User.png)
+
+## 📂 Project Structure
 
 ```text
-API-Testing-Postman/
+Reqres-API-Testing/
 │
 ├── Screenshots/
-│   ├── GET-Single-User.png
 │   ├── GET-All-Users.png
+│   ├── GET-Single-User.png
 │   ├── POST-Create-User.png
 │   ├── PUT-Update-User.png
 │   ├── PATCH-Update-User.png
-│   └── DELETE-Delete-User.png
+│   └── DELETE-User.png
+│
+├── Reqres-API-Testing.postman_collection.json
 │
 └── README.md
 ```
 
-*Update the screenshot filenames above to match the actual filenames in your Screenshots folder.*
-
-## What I Learned
+## 💡 Key Learnings
 
 Through this project, I gained practical experience in:
 
-* Understanding REST API concepts.
-* Working with different HTTP methods.
+* Understanding REST API architecture.
+* Working with GET, POST, PUT, PATCH, and DELETE methods.
 * Sending API requests through Postman.
-* Understanding HTTP status codes.
-* Reading and validating JSON responses.
-* Writing automated test scripts in Postman.
-* Checking API response times.
-* Organizing API requests into a Postman collection.
-* Identifying successful and unsuccessful API responses.
+* Validating HTTP status codes.
+* Writing JavaScript-based automated test scripts.
+* Verifying JSON response attributes.
+* Checking API response time.
+* Organizing API requests into Postman collections.
+* Documenting testing activities and results.
 
-## Conclusion
+## 🔮 Future Enhancements
 
-This project helped me develop practical knowledge of REST API testing and Postman automation. It provided hands-on experience in validating API responses, checking status codes, and writing reusable automated test scripts.
+* Add negative test scenarios.
+* Perform API testing with different test data.
+* Add JSON schema validation.
+* Explore Postman Collection Runner.
+* Integrate API tests with Newman and CI/CD pipelines.
 
-**Project Type:** API Testing
-**Tool:** Postman
-**API:** Reqres
-**Testing:** Manual and Automated API Testing
+## 👨‍💻 Author
+
+**Dennish Yadav**
+
+MCA Graduate | Aspiring Software Tester | API Testing Enthusiast
+
+📌 Skills: Manual Testing | API Testing | Postman | REST API | SQL | JavaScript Basics
 
 ---
+
+⭐ **Thank you for visiting my project!**
